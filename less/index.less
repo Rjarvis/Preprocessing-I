@@ -57,3 +57,24 @@ html, body {
     height: 100%;
 }
 
+header{
+	background-color: aquamarine;
+}
+
+header nav{
+	display: flex;
+	justify-content: space-evenly;
+	background-color: plum;	
+}
+
+@media( max-width: 800px){
+	header nav{
+		flex-direction: column;
+		justify-content: center;
+		align-items: center;
+	}
+}
+
+header nav a{
+	text-decoration: none;
+}
