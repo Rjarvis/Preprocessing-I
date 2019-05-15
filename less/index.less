@@ -59,33 +59,40 @@ html, body {
 
 .wrapper{
 	width: 100%;
-	background-color: aqua;
+	// background-color: aqua;
 	padding: 2%;
 	height: 100%;
+	
 }
-header{
-	background-color: aquamarine;
-	margin-bottom: 0.2%;
-}
-
-header nav{
-	display: flex;
-	justify-content: space-evenly;
-	background-color: plum;	
-}
-
-@media( max-width: 800px){
-	header nav{
-		flex-direction: column;
-		justify-content: center;
-		align-items: center;
+	header{
+		// background-color: aquamarine;
+		margin-bottom: 0.2%;
+		
+		nav{
+			display: flex;
+			justify-content: space-evenly;
+			// background-color: plum;
+			@media( max-width: 800px)
+			{
+				flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}	
+			
+			a{
+				text-decoration: none;
+				color: black;
+				
+				:hover{
+					background-color: black;
+					color: blue;
+					border-radius: 2px;
+					animation-duration: 0.5ms;
+				}
+			}
+		}
 	}
-}
-
-header nav a{
-	text-decoration: none;
-}
-
+	
 .container{
 	display: flex;
 	width: 100%;
