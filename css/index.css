@@ -184,6 +184,11 @@ header nav a:hover {
     height: 100%;
   }
 }
+.container .textBlock {
+  display: flex;
+  flex-flow: column;
+  padding: 2.5%;
+}
 .container h1 {
-  font-size: 1rem;
+  font-size: 2rem;
 }
