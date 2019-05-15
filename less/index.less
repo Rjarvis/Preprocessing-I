@@ -59,7 +59,7 @@ html, body {
 
 //Roland's code_____
 
-//variables
+//Mixins
 
 .marginPushBottom(@marginPusher: .5%;){
 	margin-bottom: @marginPusher;
@@ -76,7 +76,9 @@ html, body {
 	padding-left: @left;
 }
 
-.borderRadius(@radius: 2px;){
+.borderHandler(@width: 0px; @style: none; @radius: 2px;){
+	border-width: @width;
+	border-style: @style;
 	border-radius: @radius;
 }
 
@@ -89,13 +91,12 @@ html, body {
 	flex-flow: @flow;
 }
 
-.wrapper{
+.wrapper{//Start Here
 	width: 100%;
 	// background-color: aqua;
 	padding: 2%;
 	height: 100%;
 	
-}
 	header{
 		// background-color: aquamarine;
 		margin-bottom: 0.2%;
@@ -127,32 +128,42 @@ html, body {
 		}
 	}
 	
-.container{
-	display: flex;
-	width: 100%;
-	padding: 2%;
-	background-color: lightgray;
-	&:first-of-type{
-		.marginPushBottom();
-	}
+	.container{
+		display: flex;
+		width: 100%;
+		padding: 2%;
+		background-color: lightgray;
+		.borderHandler(0px, none, 10px);
+		&:first-of-type{
+			.marginPushBottom();
+		}
+		
+		img{
+			.borderHandler(1.9px, dashed, 25px);
+			.sizerWidthHeight(10%);
+			@media(max-width: 500px){
+				.sizerWidthHeight(0);
+				.borderHandler(0,none,0);
+			}
+		}
+		
+		.textBlock{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.flexFlowMaker(column);
+			.paddingPusher(2.5%);
+		}
+		
+		h1{
+			font-size: 2rem;
+		}
 
-	img{
-		.borderRadius(25px);
-		.sizerWidthHeight(10%);
-		@media(max-width: 500px){
-			.sizerWidthHeight(0)
+		p{
+			.paddingPusherTRBL(5%, 0, 0, 5%);
 		}
 	}
-
-	.textBlock{
-		display: flex;
-		.flexFlowMaker(column);
-		.paddingPusher(2.5%);
-	}
-
-	h1{
-		font-size: 2rem;
-	}
+	
+	
+	
 }
-
-
