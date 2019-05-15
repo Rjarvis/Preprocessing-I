@@ -57,6 +57,27 @@ html, body {
     height: 100%;
 }
 
+//Roland's code_____
+
+//variables
+
+.marginPushBottom(@marginPusher: .5%;){
+	margin-bottom: @marginPusher;
+}
+
+.borderRadius(@radius: 2px;){
+	border-radius: @radius;
+}
+
+.sizerWidthHeight(@width: 100%; @height: 100%;){
+	width: @width;
+	height: @height;
+}
+
+.flexFlowMaker(@flow: row;){
+	flex-flow: @flow;
+}
+
 .wrapper{
 	width: 100%;
 	// background-color: aqua;
@@ -74,7 +95,8 @@ html, body {
 			// background-color: plum;
 			@media( max-width: 800px)
 			{
-				flex-direction: column;
+				flex-flow: column;
+				// flex-direction: column;
 				justify-content: center;
 				align-items: center;
 			}	
@@ -82,12 +104,13 @@ html, body {
 			a{
 				text-decoration: none;
 				color: black;
+				padding: 0.2%;
 				
-				:hover{
+				&:hover{
 					background-color: black;
-					color: blue;
+					color: white;
 					border-radius: 2px;
-					animation-duration: 0.5ms;
+					animation-duration: 0.5s;
 				}
 			}
 		}
@@ -98,4 +121,21 @@ html, body {
 	width: 100%;
 	padding: 2%;
 	background-color: lightgray;
+	&:first-of-type{
+		.marginPushBottom();
+	}
+
+	img{
+		.borderRadius(25px);
+		.sizerWidthHeight(10%);
+		@media(max-width: 500px){
+			.sizerWidthHeight(0)
+		}
+	}
+
+	h1{
+		font-size: 1rem;
+	}
 }
+
+

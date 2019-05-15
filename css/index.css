@@ -148,7 +148,7 @@ header nav {
 }
 @media (max-width: 800px) {
   header nav {
-    flex-direction: column;
+    flex-flow: column;
     justify-content: center;
     align-items: center;
   }
@@ -156,16 +156,34 @@ header nav {
 header nav a {
   text-decoration: none;
   color: black;
+  padding: 0.2%;
 }
-header nav a :hover {
+header nav a:hover {
   background-color: black;
-  color: blue;
+  color: white;
   border-radius: 2px;
-  animation-duration: 0.5ms;
+  animation-duration: 0.5s;
 }
 .container {
   display: flex;
   width: 100%;
   padding: 2%;
   background-color: lightgray;
+}
+.container:first-of-type {
+  margin-bottom: 0.5%;
+}
+.container img {
+  border-radius: 25px;
+  width: 10%;
+  height: 100%;
+}
+@media (max-width: 500px) {
+  .container img {
+    width: 0;
+    height: 100%;
+  }
+}
+.container h1 {
+  font-size: 1rem;
 }
