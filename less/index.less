@@ -57,3 +57,140 @@ html, body {
     height: 100%;
 }
 
+//Roland's code_____
+
+//Mixins
+
+.marginPushBottom(@marginPusher: .5%;){
+	margin-bottom: @marginPusher;
+}
+
+.paddingPusher(@all: 0%;){
+	padding: @all;
+}
+
+.paddingPusherTRBL( @top: 0%; @right: 0%; @bottom: 0%; @left: 0%;){
+	padding-top: @top;
+	padding-right: @right;
+	padding-bottom: @bottom;
+	padding-left: @left;
+}
+
+.borderHandler(@width: 0px; @style: none; @radius: 2px;){
+	border-width: @width;
+	border-style: @style;
+	border-radius: @radius;
+}
+
+.borderHandlerBOTTOM(@width: 0px; @style: none; @color: black;){
+	border-bottom: @width;
+	border-style: @style;
+	border-color: @color;
+}
+
+.sizerWidthHeight(@width: 100%; @height: 100%;){
+	width: @width;
+	height: @height;
+}
+
+.flexFlowMaker(@flow: row;){
+	flex-flow: @flow;
+}
+
+.wrapper{//Start Here
+	width: 100%;
+	// background-color: aqua;
+	padding: 2%;
+	height: 100%;
+	
+	header{
+		// background-color: aquamarine;
+		margin-bottom: 0.2%;
+		
+		nav{
+			display: flex;
+			justify-content: space-evenly;
+			// background-color: plum;
+			@media( max-width: 800px)
+			{
+				flex-flow: column;
+				// flex-direction: column;
+				justify-content: center;
+				align-items: center;
+			}	
+			
+			a{
+				text-decoration: none;
+				color: black;
+				padding: 0.2%;
+				
+				&:hover{
+					background-color: black;
+					color: white;
+					border-radius: 2px;
+					animation-duration: 0.5s;
+				}
+			}
+		}
+	}
+	
+	.container{
+		display: flex;
+		width: 100%;
+		padding: 2%;
+		background-color: lightgray;
+		justify-content: space-evenly;
+		.borderHandler(0px, none, 10px);
+		&:first-of-type{
+			.marginPushBottom();
+		}
+		
+		.textBlock{
+			display: flex;
+			justify-content: center;
+			align-items: center;
+			.flexFlowMaker(column);
+			.paddingPusher(2%);
+			h2{
+				.borderHandlerBOTTOM(2px, solid, black);
+			}
+			.table{
+				.sizerWidthHeight(95%, 95%);
+				.paddingPusher(5%);
+				.borderHandler(2px,solid,2px);
+				display: flex;
+				.flexFlowMaker(row);
+
+				
+				li{
+					.paddingPusher(5%)
+				}
+			}
+		}
+		
+		img{
+			.borderHandler(1.9px, dashed, 25px);
+			.sizerWidthHeight(10%);
+			@media(max-width: 500px){
+				.sizerWidthHeight(0);
+				.borderHandler(0,none,0);
+			}
+		}
+
+		h1{
+			font-size: 2rem;
+		}
+
+		h2{
+			font-size: 1rem;
+		}
+
+		p{
+			.paddingPusherTRBL(5%, 0, 0, 5%);
+			font-size: 0.75rem;
+		}
+	}
+	
+	
+	
+}
